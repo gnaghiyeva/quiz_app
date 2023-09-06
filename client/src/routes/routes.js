@@ -4,6 +4,7 @@ import Dashboard from "../pages/Admin/Dashboard/Dashboard";
 import Home from "../pages/Main/Home/Home";
 import MainRoot from "../pages/Main/MainRoot";
 import UserLogin from "../pages/Main/UserLogin";
+import UserRegister from "../pages/Main/UserRegister";
 
 export const ROUTES = [
     {
@@ -13,6 +14,10 @@ export const ROUTES = [
             {
                 path:'/login',
                 element:<UserLogin/>
+            },
+            {
+                path:'/register',
+                element:<UserRegister/>
             },
             {
                 path:'',
