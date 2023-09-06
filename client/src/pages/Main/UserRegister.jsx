@@ -1,6 +1,6 @@
 import { useFormik } from 'formik'
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { signUp } from '../../api/requests'
 
@@ -59,9 +59,9 @@ const UserRegister = () => {
                                 class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
                             >Create Account</button>
 
-                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                            <Link to={'/login'} class="text-sm font-light text-gray-500 dark:text-gray-400">
                                 Already have an account? <a href={() => false} class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
-                            </p>
+                            </Link>
                         </form>
                     </div>
                 </div>
