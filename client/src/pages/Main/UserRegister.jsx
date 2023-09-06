@@ -3,7 +3,8 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { signUp } from '../../api/requests'
-
+import { Helmet } from 'react-helmet';
+import favicon from '../../assets/icon/app_icon.png'
 const UserRegister = () => {
     const navigate = useNavigate()
     const handleSubmit = async (values, actions) => {
@@ -14,7 +15,7 @@ const UserRegister = () => {
             title: 'User registered successfully',
             showConfirmButton: false,
             timer: 1500
-          })
+        })
         actions.resetForm()
         navigate('/login')
     }
@@ -30,49 +31,55 @@ const UserRegister = () => {
         onSubmit: handleSubmit
     })
     return (
-        <section class="bg-gray-50 white:bg-gray-900">
-            <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                <p class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-dark">
-                    User Register
-                </p>
-                <div class="w-full bg-white rounded-lg shadow light:border md:mt-0 sm:max-w-md xl:p-0 light:bg-gray-800 light:border-gray-700">
-                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-dark">
-                            Create and account
-                        </h1>
+        <>
+            <Helmet>
+                <title>User Register</title>
+                <link rel="icon" type="image/x-icon" href={favicon} />
+            </Helmet>
+            <section class="bg-gray-50 white:bg-gray-900">
+                <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                    <p class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-dark">
+                        User Register
+                    </p>
+                    <div class="w-full bg-white rounded-lg shadow light:border md:mt-0 sm:max-w-md xl:p-0 light:bg-gray-800 light:border-gray-700">
+                        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-dark">
+                                Create and account
+                            </h1>
 
-                        <form class="space-y-4 md:space-y-6" onSubmit={formik.handleSubmit}>
-                            <div>
-                                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Your Username</label>
-                                <input onChange={formik.handleChange} onBlur={formik.handleBlur} name='username' type='text' value={formik.values.username} id="username" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 white:bg-gray-700 white:border-gray-600 white:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 white:focus:border-blue-500" placeholder="dennis" required="" />
-                            </div>
-                            <div>
-                                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Your Image</label>
-                                <input onChange={formik.handleChange} onBlur={formik.handleBlur} name='image' type='text' value={formik.values.image} id="image" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 white:bg-gray-700 white:border-gray-600 white:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 white:focus:border-blue-500" placeholder="image_link"  required="" />
-                            </div>
-                            <div>
-                                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Your Email</label>
-                                <input onChange={formik.handleChange} onBlur={formik.handleBlur} name='email' type='email' value={formik.values.email} id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 white:bg-gray-700 white:border-gray-600 white:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 white:focus:border-blue-500" placeholder="dennis@gmail.com"  required="" />
-                            </div>
-                            <div>
-                                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Password</label>
-                                <input type="password" name="password" id="password" placeholder="••••••••" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password} class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 white:bg-gray-700 white:border-gray-600 white:placeholder-gray-400 dark:text-dark white:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
-                            </div>
+                            <form class="space-y-4 md:space-y-6" onSubmit={formik.handleSubmit}>
+                                <div>
+                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Your Username</label>
+                                    <input onChange={formik.handleChange} onBlur={formik.handleBlur} name='username' type='text' value={formik.values.username} id="username" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 white:bg-gray-700 white:border-gray-600 white:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 white:focus:border-blue-500" placeholder="dennis" required="" />
+                                </div>
+                                <div>
+                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Your Image</label>
+                                    <input onChange={formik.handleChange} onBlur={formik.handleBlur} name='image' type='text' value={formik.values.image} id="image" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 white:bg-gray-700 white:border-gray-600 white:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 white:focus:border-blue-500" placeholder="image_link" required="" />
+                                </div>
+                                <div>
+                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Your Email</label>
+                                    <input onChange={formik.handleChange} onBlur={formik.handleBlur} name='email' type='email' value={formik.values.email} id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 white:bg-gray-700 white:border-gray-600 white:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 white:focus:border-blue-500" placeholder="dennis@gmail.com" required="" />
+                                </div>
+                                <div>
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Password</label>
+                                    <input type="password" name="password" id="password" placeholder="••••••••" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password} class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 white:bg-gray-700 white:border-gray-600 white:placeholder-gray-400 dark:text-dark white:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                                </div>
 
 
-                            <button
-                                type="submit"
-                                class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
-                            >Create Account</button>
+                                <button
+                                    type="submit"
+                                    class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
+                                >Create Account</button>
 
-                            <Link to={'/login'} class="text-sm font-light text-gray-500 dark:text-gray-400">
-                                Already have an account? <a href={() => false} class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
-                            </Link>
-                        </form>
+                                <Link to={'/login'} class="text-sm font-light text-gray-500 dark:text-gray-400">
+                                    Already have an account? <a href={() => false} class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
+                                </Link>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }
 

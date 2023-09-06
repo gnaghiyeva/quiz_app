@@ -4,7 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signIn } from '../../api/requests';
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
-
+import { Helmet } from 'react-helmet';
+import favicon from '../../assets/icon/app_icon.png'
 const UserLogin = () => {
   const [user, setUser] = useUserContext();
   console.log(user)
@@ -51,6 +52,11 @@ const UserLogin = () => {
   });
   return (
     <>
+      <Helmet>
+        <title>User Login</title>
+        <link rel="icon" type="image/x-icon" href={favicon} />
+      </Helmet>
+
       <section class="bg-white white:bg-gray-900">
         <div class="container px-6 py-24 mx-auto lg:py-32">
           <div class="lg:flex">
