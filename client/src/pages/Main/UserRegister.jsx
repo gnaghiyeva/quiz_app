@@ -8,11 +8,13 @@ const UserRegister = () => {
     const navigate = useNavigate()
     const handleSubmit = async (values, actions) => {
         await signUp(values)
-        Swal.fire(
-            'Good job!',
-            'Account created succesfully!',
-            'success'
-        )
+        Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'User registered successfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
         actions.resetForm()
         navigate('/login')
     }
@@ -47,6 +49,10 @@ const UserRegister = () => {
                             <div>
                                 <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Your Image</label>
                                 <input onChange={formik.handleChange} onBlur={formik.handleBlur} name='image' type='text' value={formik.values.image} id="image" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 white:bg-gray-700 white:border-gray-600 white:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 white:focus:border-blue-500" placeholder="image_link"  required="" />
+                            </div>
+                            <div>
+                                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Your Email</label>
+                                <input onChange={formik.handleChange} onBlur={formik.handleBlur} name='email' type='email' value={formik.values.email} id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 white:bg-gray-700 white:border-gray-600 white:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 white:focus:border-blue-500" placeholder="dennis@gmail.com"  required="" />
                             </div>
                             <div>
                                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Password</label>

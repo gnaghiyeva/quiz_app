@@ -32,6 +32,14 @@ const UserLogin = () => {
       actions.resetForm();
       navigate('/');
     }
+    else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Username or Password is incorrect!',
+       
+      })
+    }
   };
 
   const formik = useFormik({
@@ -43,8 +51,6 @@ const UserLogin = () => {
   });
   return (
     <>
-
-
       <section class="bg-white white:bg-gray-900">
         <div class="container px-6 py-24 mx-auto lg:py-32">
           <div class="lg:flex">
@@ -95,7 +101,7 @@ const UserLogin = () => {
 
                 <div class="mt-8 md:flex md:items-center">
                   <button type='submit' class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg md:w-1/2 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                    Sign in
+                    Sign in     
                   </button>
 
                   <Link to={'/register'}>
