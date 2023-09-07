@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ROUTES } from './routes/routes';
 import { AdminContextProvider } from './context/AdminContext';
 import { UserContextProvider } from './context/UserContext';
+import { HomeContextProvider } from './context/HomeModelContext';
 
 function App() {
   const routes = createBrowserRouter(ROUTES)
@@ -10,9 +11,11 @@ function App() {
     <>
       <AdminContextProvider>
         <UserContextProvider>
-          <RouterProvider router={routes}>
+          <HomeContextProvider>
+            <RouterProvider router={routes}>
 
-          </RouterProvider>
+            </RouterProvider>
+          </HomeContextProvider>
         </UserContextProvider>
       </AdminContextProvider>
     </>

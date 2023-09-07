@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Grid from '@mui/material/Grid';
 import { getAllModels } from '../../../api/requests';
 import homeStyle from '../../../styles/quizhome.module.css'
+import { useHomeContext } from '../../../context/HomeModelContext';
 const QuizHome = () => {
-  const [models, setModels] = useState([])
+  const [models, setModels] = useHomeContext([])
 
   console.log('home-models', models)
 
@@ -11,7 +12,7 @@ const QuizHome = () => {
     getAllModels().then((res) => {
       setModels(res.data)
     })
-  }, [])
+  })
 
   return (
     <>

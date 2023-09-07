@@ -1,6 +1,8 @@
 import AdminLogin from "../pages/Admin/AdminLogin";
 import AdminRoot from "../pages/Admin/AdminRoot";
 import Dashboard from "../pages/Admin/Dashboard/Dashboard";
+import AdminHomeTitle from "../pages/Admin/HomeTitle/AdminHomeTitle";
+import EditHomeTitle from "../pages/Admin/HomeTitle/EditHomeTitle";
 import Home from "../pages/Main/Home/Home";
 import MainRoot from "../pages/Main/MainRoot";
 import UserLogin from "../pages/Main/UserLogin";
@@ -37,6 +39,14 @@ export const ROUTES = [
             {
                 path:'',
                 element:<Dashboard/>
+            },
+            {
+                path:'home-models',
+                element:<AdminHomeTitle/>
+            },
+            {
+                path:'home-models/edit/:id',
+                element:<EditHomeTitle/>
             }
         ]
     }

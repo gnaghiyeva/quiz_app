@@ -2,7 +2,7 @@ import {  createContext, useContext, useState } from "react";
 
 const HomeContext = createContext();
 
-export const ArtistContextProvider = ({children})=>{
+export const HomeContextProvider = ({children})=>{
     const [models, setModels] = useState([]);
 
     return (
