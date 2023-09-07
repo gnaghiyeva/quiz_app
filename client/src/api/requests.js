@@ -29,7 +29,6 @@ export const getUsers = async (token) => {
   };
 
   //*********************  home model  **************************** */
-//logo
 export const getAllModels = async()=>{
   let globalData
 
@@ -62,4 +61,40 @@ export const editModel = (id,updatedModel)=>{
 
 export const postModel = (newModel)=>{
   axios.post(`${BASE_URL}/home-model`,newModel)
+}
+
+  //*********************  categories  **************************** */
+//logo
+export const getAllCategories = async()=>{
+  let globalData
+
+  await axios.get(`${BASE_URL}/categories`)
+  .then(res => {
+      globalData = res.data;
+  })
+  return globalData
+}
+
+export const getCategoryById = async(id)=>{
+  let globalData;
+  await axios.get(`${BASE_URL}/categories/${id}`).then((res)=>{
+      globalData=res.data
+      })
+      return globalData
+}
+
+export const deleteCategory = async(id)=>{
+ let deletedModel
+  await axios.delete(`${BASE_URL}/categories/${id}`).then((res)=>{
+      deletedModel=res.data
+  })
+  return deletedModel
+}
+
+export const editCategory = (id,updatedModel)=>{
+ axios.put(`${BASE_URL}/categoriesl/${id}`,updatedModel)
+}
+
+export const postCategory = (newModel)=>{
+  axios.post(`${BASE_URL}/categories`,newModel)
 }

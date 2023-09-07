@@ -1,10 +1,12 @@
 import React from 'react'
 import QuizHome from './QuizHome'
+import Categories from './Categories'
 
 const Home = () => {
   return (
     <>
-   <QuizHome/> 
+      <Categories />
+      <QuizHome />
     </>
   )
 }

@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const admin_router = require('./routes/admin.routes');
 const home_router = require('./routes/quizhome.routes');
+const category_router = require('./routes/categories.routes');
 
 dotenv.config();
 app.use(bodyParser.json());
@@ -17,6 +18,7 @@ app.get('/api', (req, res) => {
 
 app.use('/api', admin_router)
 app.use('/api/home-model', home_router)
+app.use('/api/categories', category_router)
 
 
 DB_CONNECTION = process.env.DB_CONNECTION
