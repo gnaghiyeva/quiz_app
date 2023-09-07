@@ -1,8 +1,11 @@
 import React from 'react'
+import QuizHome from './QuizHome'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+   <QuizHome/> 
+    </>
   )
 }
 

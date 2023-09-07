@@ -1,0 +1,23 @@
+.homeText{
+    text-align: left;
+    padding: 80px 40px;
+}
+
+.homeTitle{
+    font-size: 2em;
+    color: blueviolet;
+    font-weight: 700;
+}
+
+.homeDesc{
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.homeImageContainer{
+    text-align: center;
+}
+.homeImage{
+    text-align: center;
+    margin: 0 auto;
+}

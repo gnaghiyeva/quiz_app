@@ -28,3 +28,38 @@ export const getUsers = async (token) => {
     }
   };
 
+  //*********************  home model  **************************** */
+//logo
+export const getAllModels = async()=>{
+  let globalData
+
+  await axios.get(`${BASE_URL}/home-model`)
+  .then(res => {
+      globalData = res.data;
+  })
+  return globalData
+}
+
+export const getModelById = async(id)=>{
+  let globalData;
+  await axios.get(`${BASE_URL}/home-model/${id}`).then((res)=>{
+      globalData=res.data
+      })
+      return globalData
+}
+
+export const deleteModel = async(id)=>{
+ let deletedModel
+  await axios.delete(`${BASE_URL}/home-model/${id}`).then((res)=>{
+      deletedModel=res.data
+  })
+  return deletedModel
+}
+
+export const editModel = (id,updatedModel)=>{
+ axios.put(`${BASE_URL}/home-model/${id}`,updatedModel)
+}
+
+export const postModel = (newModel)=>{
+  axios.post(`${BASE_URL}/home-model`,newModel)
+}
