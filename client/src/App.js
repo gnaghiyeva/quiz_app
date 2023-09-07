@@ -4,6 +4,7 @@ import { ROUTES } from './routes/routes';
 import { AdminContextProvider } from './context/AdminContext';
 import { UserContextProvider } from './context/UserContext';
 import { HomeContextProvider } from './context/HomeModelContext';
+import { CategoriesContextProvider } from './context/CategoriesContext';
 
 function App() {
   const routes = createBrowserRouter(ROUTES)
@@ -12,9 +13,11 @@ function App() {
       <AdminContextProvider>
         <UserContextProvider>
           <HomeContextProvider>
-            <RouterProvider router={routes}>
+            <CategoriesContextProvider>
+              <RouterProvider router={routes}>
 
-            </RouterProvider>
+              </RouterProvider>
+            </CategoriesContextProvider>
           </HomeContextProvider>
         </UserContextProvider>
       </AdminContextProvider>

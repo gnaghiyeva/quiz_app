@@ -10,25 +10,25 @@ const Dashboard = () => {
         
         <div class="p-4 space-y-4">
             
-            <a href="#" aria-label="dashboard"
+            <a href={() => false} aria-label="dashboard"
                 class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-500 group">
                 <i class="fas fa-home text-white"></i>
                 <span><Link to={'/admin/home-models'}>Home-Models</Link></span>
             </a>
 
-            <a href="#" class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-500 group">
+            <a href={() => false} class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-500 group">
                 <i class="fas fa-wallet"></i>
-                <span>Billetera</span>
+                <span><Link to={'/admin/categories'}>Categories</Link></span>
             </a>
-            <a href="#" class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-500 group">
+            <a href={() => false} class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-500 group">
                 <i class="fas fa-exchange-alt"></i>
                 <span>Transacciones</span>
             </a>
-            <a href="#" class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-500 group">
+            <a href={() => false} class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-500 group">
                 <i class="fas fa-user"></i>
                 <span>Mi cuenta</span>
             </a>
-            <a href="#" class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-500 group">
+            <a href={() => false} class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-500 group">
                 <i class="fas fa-sign-out-alt"></i>
                 <span>Cerrar sesión</span>
             </a>

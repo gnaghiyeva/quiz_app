@@ -92,7 +92,7 @@ export const deleteCategory = async(id)=>{
 }
 
 export const editCategory = (id,updatedModel)=>{
- axios.put(`${BASE_URL}/categoriesl/${id}`,updatedModel)
+ axios.put(`${BASE_URL}/categories/${id}`,updatedModel)
 }
 
 export const postCategory = (newModel)=>{

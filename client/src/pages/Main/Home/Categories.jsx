@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { getAllCategories } from '../../../api/requests'
 import { Button } from '@mui/material'
+import { useCategoriesContext } from '../../../context/CategoriesContext'
 
 const Categories = () => {
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useCategoriesContext([])
     useEffect(()=>{
         getAllCategories().then((res)=>{
             setCategories(res.data)
         })
-    },[])
+    })
 
   return (
     <>
