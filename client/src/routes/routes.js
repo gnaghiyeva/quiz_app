@@ -1,5 +1,6 @@
 import AdminLogin from "../pages/Admin/AdminLogin";
 import AdminRoot from "../pages/Admin/AdminRoot";
+import AddCategory from "../pages/Admin/Categories/AddCategory";
 import AdminCategories from "../pages/Admin/Categories/AdminCategories";
 import EditCategories from "../pages/Admin/Categories/EditCategories";
 import Dashboard from "../pages/Admin/Dashboard/Dashboard";
@@ -53,6 +54,10 @@ export const ROUTES = [
             {
                 path:'categories',
                 element:<AdminCategories/>
+            },
+            {
+                path:'add-category',
+                element:<AddCategory/>
             },
             {
                 path:'categories/edit/:id',
