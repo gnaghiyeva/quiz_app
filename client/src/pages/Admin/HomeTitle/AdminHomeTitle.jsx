@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
-import { useHomeContext } from '../../../context/HomeModelContext'
+import React, { useEffect, useState } from 'react'
 import { getAllModels } from '../../../api/requests'
 import { Link } from 'react-router-dom'
 
 const AdminHomeTitle = () => {
-    const [models, setModels] = useHomeContext([])
+    const [models, setModels] = useState([])
 
     console.log('home-models', models)
 
